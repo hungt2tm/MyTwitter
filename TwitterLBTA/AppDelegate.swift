@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LBTAComponents
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
         // Override point for customization after application launch.
+        // ignore the storyboard
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        window?.rootViewController = UINavigationController(rootViewController: HomeDataSourceController())
+        
+//        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
+//        window?.rootViewController = UINavigationController(rootViewController: homeController)
         return true
     }
 
